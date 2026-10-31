@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AFK Zone Human</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;700&family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<!-- LOGIN -->
+<section id="login" class="screen on">
+  <div class="card">
+    <h1>AFK Zone Human</h1>
+    <p style="color:var(--mute);margin-top:4px">Tempat istirahat buat manusia internet. Duduk dekat api unggun, ngobrol atau diam saja.</p>
+    <div class="lbl">Nama kamu</div>
+    <input id="name" type="text" maxlength="20" placeholder="Misal: Budi" autocomplete="off">
+    <div class="lbl">Foto profil (opsional)</div>
+    <div class="row">
+      <img id="pv" class="avatar" alt="Foto profil">
+      <input id="file" type="file" accept="image/*">
+    </div>
+    <div class="row" style="margin-top:22px"><button id="enter">Masuk</button></div>
+    <div id="err"></div>
+  </div>
+</section>
+
+<!-- LOBBY -->
+<section id="lobby" class="screen">
+  <div class="top">
+    <div class="row"><img id="me-av" class="avatar" style="width:44px;height:44px" alt=""><div><b id="me-name"></b><br><small style="color:var(--mute)">Pilih api unggun</small></div></div>
+    <button class="ghost" id="logout">Ganti profil</button>
+  </div>
+  <div class="list">
+    <div class="panel">
+      <h2>Buat room</h2>
+      <input id="rname" type="text" maxlength="30" placeholder="Nama room">
+      <div class="seg">
+        <label><input type="radio" name="vis" value="pub" checked> Publik, muncul di daftar</label>
+        <label><input type="radio" name="vis" value="priv"> Privat, pakai kode angka</label>
+      </div>
+      <input id="rpin" type="text" inputmode="numeric" maxlength="6" placeholder="Kode angka 4 sampai 6 digit" autocomplete="off" hidden>
+      <div><button id="mk">Buat room</button></div>
+    </div>
+    <div class="panel">
+      <h2>Gabung room privat</h2>
+      <div class="row"><input id="jid" type="text" maxlength="6" placeholder="Room ID"><input id="jpin" type="text" inputmode="numeric" maxlength="6" placeholder="Kode angka"></div>
+      <div><button id="jbtn">Gabung</button></div>
+    </div>
+    <h2 style="margin-top:8px">Room publik</h2>
+    <div id="rooms"></div>
+    <div id="lerr" style="color:#ff8a6b"></div>
+  </div>
+</section>
+
+<!-- ROOM -->
+<section id="room" class="screen">
+  <div class="rwrap">
+    <div class="stage" id="stage">
+      <div class="bar"><div><h2 id="rt" style="font-size:20px"></h2><small id="rmeta" style="color:var(--mute)"></small></div><div class="row"><button class="ghost" id="copy">Salin kode</button><button class="ghost" id="leave">Keluar</button></div></div>
+      <div class="circle">
+        <div class="ring" id="ring">
+          <canvas id="fire" width="300" height="300"></canvas>
+        </div>
+      </div>
+      <div class="ctrl"><button id="mute">Mute mic</button><span id="vstat" style="color:var(--mute);align-self:center"></span></div>
+    </div>
+    <div class="chat">
+      <div class="msgs" id="msgs"></div>
+      <div class="cin"><input id="cm" type="text" maxlength="300" placeholder="Tulis pesan..." autocomplete="off"><button id="send">Kirim</button></div>
+    </div>
+  </div>
+</section>
+
+<div id="audios" hidden></div>
+
+<script type="module" src="/app.js"></script>
+</body>
+</html>
