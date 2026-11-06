@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /beranda
+Disallow: /masuk
+Disallow: /game/
+Disallow: /profile/
+Disallow: /api/
+
+Sitemap: https://afk.gimoystudio.my.id/sitemap.xml

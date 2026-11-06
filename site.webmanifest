@@ -1,0 +1,11 @@
+{
+  "name": "AFK Zone Human",
+  "short_name": "AFK Zone",
+  "description": "Tempat istirahat online: voice chat, nobar, dan game bareng di sekitar api unggun.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "lang": "id",
+  "icons": [{ "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }]
+}
